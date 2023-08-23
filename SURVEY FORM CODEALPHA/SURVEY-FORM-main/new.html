@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: hsl(0, 72%, 7%);
+        font-family: Verdana;
+        text-align: center;
+        color: rgb(157, 255, 0);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      form {
+        background-color: #030e11;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px 20px;
+        box-shadow: 2px 5px 10px rgba(229, 233, 8, 0.979);
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <?php include 'index.php';?>
+  </head>
+
+  <body>
+    <h1 style="box-shadow: rgb(130, 100, 237)">Survey Form</h1>
+
+    <form target="_blank" action="https://formsubmit.co/b1d5ecbf3348d2961502b3699a41bf18" method="POST">
+      <div id="survey1">
+        <div class="form-control">
+          <label for="name" id="label-name"> Name </label>
+
+          <input type="text" id="name" placeholder="Enter your name" />
+        </div>
+
+        <div class="form-control">
+          <label for="email" id="label-email"> Email</label>
+
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+        <div class="form-control">
+          <label for="age" id="label-age"> Age </label>
+
+          <input type="text" id="age" placeholder="Enter your age" />
+        </div>
+
+        <div class="form-control">
+          <label for="role" id="label-role">
+            Which option best describes you?
+          </label>
+
+          <select name="role" id="role">
+            <option value="student">Student</option>
+            <option value="intern">Intern</option>
+            <option value="professional">Professional</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button
+          id="next1"
+          onclick="next1Click()"
+          style="background-color: rgb(0, 255, 106)"
+        >
+          Next
+        </button>
+      </div>
+
+      <div id="survey2">
+        <div class="q1">
+          <h3>which programming language do you learn</h3>
+          <ul class="option1">
+            <li><input type="radio" name="firs" value="python" />python</li>
+            <li><input type="radio" name="firs" value="java" />java</li>
+            <li><input type="radio" name="firs" value="C#" />C#</li>
+            <li>
+              <input type="radio" name="firs" id="JavaScript" />JavaScript
+            </li>
+          </ul>
+        </div>
+        <div class="q2">
+          <h3>How long have you been coding</h3>
+          <ul class="option2">
+            <li><input type="radio" name="first" value="started" /> started</li>
+            <li>
+              <input type="radio" name="first" value="3-6 months" />3-6 months
+            </li>
+            <li>
+              <input type="radio" name="first" value="6-12 months" />6-12 months
+            </li>
+            <li>
+              <input type="radio" name="first" value="1-2 years" />1-2 years
+            </li>
+          </ul>
+        </div>
+        <div class="q3">
+          <h3>What`s your idea after learning code</h3>
+          <ul class="option3">
+            <li>
+              <input type="radio" name="fir" value="Full Time Job" />Full Time
+              Job
+            </li>
+            <li>
+              <input type="radio" name="fir" value="Freelancing" />Freelancing
+            </li>
+            <li>
+              <input type="radio" name="fir" value="Side Hustle" />Side Hustle
+            </li>
+            <li><input type="radio" name="fir" value="No idea" />No idea</li>
+          </ul>
+        </div>
+        <button
+          id="prev1"
+          onclick="prev1Click()"
+          style="background-color: rgb(0, 255, 106)"
+        >
+          prev
+        </button>
+        <button
+          id="next2"
+          onclick="next2Click()"
+          style="background-color: rgb(0, 255, 106)"
+        >
+          next
+        </button>
+      </div>
+
+      <div id="survey3" onsubmit="sendEmail">
+        <script src="app.js"></script>
+        <div class="form-control">
+          <div class="heading-field">
+            <h3 class="field-head">Ratings</h3>
+          </div>
+          <div class="field-inputs" style="margin: 0.5rem 0px">
+            <h5>Rating 1:</h5>
+            <div class="input-div" style="display: flex; gap: 10px">
+              <input type="radio" id="bad" name="rating1" value="bad" />
+              <label for="bad">Bad</label><br />
+              <input type="radio" id="good" name="rating1" value="good" />
+              <label for="good">Good</label><br />
+              <input type="radio" id="excelent" name="rating1" value="other" />
+              <label for="excelent">Excelent</label><br />
+            </div>
+          </div>
+          <div class="field-inputs" style="margin: 0.5rem 0px">
+            <h5>Rating 2:</h5>
+            <div class="input-div" style="display: flex; gap: 10px">
+              <input type="radio" id="bad2" name="rating2" value="bad" />
+              <label for="bad2">Bad</label><br />
+              <input type="radio" id="good2" name="rating2" value="good" />
+              <label for="good2">Good</label><br />
+              <input
+                type="radio"
+                id="excelent2"
+                name="rating2"
+                value="excelent"
+              />
+              <label for="excelent2">Excelent</label><br />
+            </div>
+          </div>
+          <div class="field-inputs" style="margin: 0.5rem 0px">
+            <h5>Rating 3 :</h5>
+            <div class="input-div" style="display: flex; gap: 10px">
+              <input type="radio" id="bad3" name="rating3" value="bad" />
+              <label for="bad3">Bad</label><br />
+              <input type="radio" id="good3" name="rating3" value="good" />
+              <label for="good3">Good</label><br />
+              <input
+                type="radio"
+                id="excelent3"
+                name="rating3"
+                value="excelent"
+              />
+              <label for="excelent3">Excelent</label><br />
+            </div>
+          </div>
+        </div>
+        <button
+          id="prev2"
+          onclick="prev2Click()"
+          style="background-color: rgb(0, 255, 106)"
+        >
+          prev
+        </button>
+        <button onclick="sendEmail()" type="submit">send</button>
+      </div>
+
+      <script src="app.js"></script>
+    </form>
+  </body>
+</html>
